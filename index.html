@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>零基础进阶学网安-众多课程助你迎风飞翔</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#0A2463',
+                        accent: '#3E92CC',
+                        neutral: '#F5F7FA',
+                        dark: '#1D2129'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .text-shadow-lg { text-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08); }
+        .transition-navbar { transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease; }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+    </style>
+</head>
+<body class="font-inter bg-white text-dark">
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed w-full z-50 transition-navbar py-4">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="img/logo.png" alt="公司Logo" class="w-20 h-20 rounded-full mr-3 shadow-lg object-cover">
+                <span class="text-5xl font-bold text-SlateGray text-shadow">信大信安<span class="text-accent">Education</span></span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-white hover:text-accent transition-colors">首页</a>
+                <a href="#about" class="text-white hover:text-accent transition-colors">关于我们</a>
+                <a href="#products" class="text-white hover:text-accent transition-colors">产品服务</a>
+                <a href="#cases" class="text-white hover:text-accent transition-colors">客户案例</a>
+                <a href="#contact" class="text-white hover:text-accent transition-colors">联系我们</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <i class="fa fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 轮播Banner -->
+    <section id="home" class="relative h-screen overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="carousel relative h-full">
+                <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&h=1080&fit=crop" alt="创新科技愿景" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-secondary/70 to-primary/50"></div>
+                </div>
+                <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&h=1080&fit=crop" alt="创新科技产品" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-secondary/70 to-primary/50"></div>
+                </div>
+                <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop" alt="创新科技团队" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-secondary/70 to-primary/50"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 h-full flex items-center relative z-10">
+            <div class="max-w-3xl text-white">
+                <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight text-shadow-lg mb-6">零基础进阶学网安<br>众多课程助你迎风飞翔</h1>
+                <p class="text-[clamp(1rem,2vw,1.25rem)] mb-8 text-white/90 max-w-xl">陪同式成长：导师+助教+班主任服务，我们致力于实操与理论完美结合，真实工作场景模拟，网络安全工作流程了如指掌，实战项目与企业需求无缝对接，助力开启您的网安学习之路。</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#products" class="px-8 py-3 bg-primary hover:bg-primary/90 text-white rounded-md shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">探索产品</a>
+                    <a href="#contact" class="px-8 py-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/30 rounded-md shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 品牌故事 -->
+    <section id="about" class="py-20 bg-neutral">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">我们的使命与愿景</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">我们致力于打造创新教学模式，实操与理论完美结合，真实工作场景模拟，网络安全工作流程了如指掌，实战项目与企业需求无缝对接，助力开启您的网安之路。</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="img/31.jpg" alt="创新科技团队" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">关于信大信安</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">信大信安始终秉承以科技赋能教育、以创新促进发展的使命，依托强大的专业师资团队，完善丰富的课程资源、创新发展的课程体系，新颖精进的技术支持手段</p>
+                    <p class="text-gray-700 mb-8 leading-relaxed">帮助有志成为相关领域专业人才的广大学员提供专业化、定制化、智能化的一站式教学服务，提供全方位多维度的资源共享，个性化的职业道路规划咨询，特色化的高质量就业保障服务</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-2 rounded-lg mr-3">
+                                <i class="fa fa-lightbulb-o text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">创新精神</h4>
+                                <p class="text-gray-600 text-xs">不断探索新技术</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-2 rounded-lg mr-3">
+                                <i class="fa fa-users text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">客户至上</h4>
+                                <p class="text-gray-600 text-xs">以客户需求为中心</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品服务 -->
+    <section id="products" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">我们的产品与服务</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">提供全方位的技能培养方案，满足不同学员的多样化需求</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop" alt="人工智能解决方案" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <h3 class="text-white text-xl font-bold p-6">网络安全工程师培养方案</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">学习数通技术、操作系统、下一代防火墙、上网行为管理、VPN技术、终端安全防护、零信任、安全感知平台、渗透测试等知识，专注实战能力，培养攻防兼备的网络安全精英人才。</p>
+                        <a href="#" class="text-primary font-medium hover:text-primary/80 transition-colors">了解详情 →</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop" alt="云计算服务" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <h3 class="text-white text-xl font-bold p-6">人工智能训练师培养方案</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">系统教授机器学习、深度学习、自然语言处理等核心技术，强化数据清洗、模型调优、算法部署等实战能力，培养懂理论、精工具、能落地的AI训练师。</p>
+                        <a href="#" class="text-primary font-medium hover:text-primary/80 transition-colors">了解详情 →</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop" alt="大数据分析" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <h3 class="text-white text-xl font-bold p-6">工业视觉工程师培养方案</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">面向智能制造领域，培养掌握光学成像、图像处理、算法开发及系统集成的复合型工程师，具备缺陷检测、尺寸测量、定位引导等场景的解决方案设计能力。</p>
+                        <a href="#" class="text-primary font-medium hover:text-primary/80 transition-colors">了解详情 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户案例 -->
+    <section id="cases" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">往期学员案例</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">与众多行业领先企业合作，共同拓展高薪就业渠道</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="relative h-64">
+                        <img src="img/1期.jpg" alt="金融行业解决方案" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                            <div class="absolute bottom-0 left-0 p-6 text-white">
+                                <span class="bg-primary/90 text-white text-xs px-3 py-1 rounded-full">网络安全工程师</span>
+                                <h4 class="text-xl font-bold mt-2">网络安全工程师菁英班1期线下班已结业</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">全部学员百分百对口就业，优秀毕业学员7名，入职深信服、天融信、绿盟等网安头部企业。</p>
+                        <a href="#" class="text-primary font-medium hover:text-primary/80 transition-colors">查看详情 →</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="relative h-64">
+                        <img src="img/2期.jpg" alt="零售行业解决方案" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                            <div class="absolute bottom-0 left-0 p-6 text-white">
+                                <span class="bg-accent/90 text-white text-xs px-3 py-1 rounded-full">网络安全工程师</span>
+                                <h4 class="text-xl font-bold mt-2">网络安全工程师菁英班2期线下班进行中</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">零基础学网安，助力万千学员高薪就业。</p>
+                        <a href="#" class="text-primary font-medium hover:text-primary/80 transition-colors">查看详情 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">联系我们</h2>
+                    <p class="text-gray-600 mb-8">无论您有任何问题或需求，我们的团队都将竭诚为您提供帮助和支持</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                                <i class="fa fa-map-marker text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">公司地址</h4>
+                                <p class="text-gray-600">郑州市高新区总部企业基地3期92号楼</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                                <i class="fa fa-phone text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">联系电话</h4>
+                                <p class="text-gray-600">19213861920</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                                <i class="fa fa-envelope text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">电子邮箱</h4>
+                                <p class="text-gray-600">19213861920@163.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-xl">
+                    <h3 class="text-xl font-bold mb-6">预约咨询</h3>
+                    <form>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <input type="text" placeholder="姓名" class="w-full px-4 py-2 border rounded-md">
+                            <input type="tel" placeholder="电话" class="w-full px-4 py-2 border rounded-md">
+                        </div>
+                        <input type="email" placeholder="邮箱" class="w-full px-4 py-2 border rounded-md mb-4">
+                        <select class="w-full px-4 py-2 border rounded-md mb-4">
+                            <option>选择服务类型</option>
+                            <option>网络安全工程师</option>
+                            <option>人工智能训练师</option>
+                            <option>工业视觉工程师</option>
+                        </select>
+                        <textarea placeholder="留言内容" rows="4" class="w-full px-4 py-2 border rounded-md mb-4"></textarea>
+                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-md hover:bg-primary/90 transition-colors">提交预约</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">信大信安</h3>
+                    <p class="text-gray-400">零基础进阶学网安，众多课程助你迎风飞翔。</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">快速链接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">首页</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">关于我们</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white">产品服务</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">联系我们</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">联系方式</h4>
+                    <p class="text-gray-400">地址：郑州市高新区总部企业基地3期92号楼</p>
+                    <p class="text-gray-400">电话：19213861920</p>
+                    <p class="text-gray-400">邮箱：19213861920@163.com</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">关注我们</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fa fa-weixin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fa fa-weibo"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 信大信安. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'shadow-md', 'py-2');
+                navbar.classList.remove('bg-transparent', 'py-4');
+                navbar.querySelectorAll('a').forEach(link => {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-dark');
+                });
+            } else {
+                navbar.classList.remove('bg-white', 'shadow-md', 'py-2');
+                navbar.classList.add('bg-transparent', 'py-4');
+                navbar.querySelectorAll('a').forEach(link => {
+                    link.classList.add('text-white');
+                    link.classList.remove('text-dark');
+                });
+            }
+        });
+
+        // 轮播图
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            carouselItems.forEach(item => item.style.opacity = '0');
+            carouselItems[index].style.opacity = '1';
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % carouselItems.length;
+            showSlide(currentSlide);
+        }
+        
+        showSlide(0);
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
